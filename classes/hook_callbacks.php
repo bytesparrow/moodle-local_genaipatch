@@ -12,7 +12,8 @@ class hook_callbacks {
      */
     public static function before_footer_html_generation(\core\hook\output\before_footer_html_generation $hook): void  {
         global $PAGE;
-				if (strpos($PAGE->pagetype, 'question-') !== false || strpos($PAGE->url, 'bank/genai') !== false) {
+        #return;
+				if (strpos($PAGE->url, 'bank/genai') !== false) {
           $PAGE->requires->js_call_amd('local_genaipatch/patchform', 'init');
         }
     }

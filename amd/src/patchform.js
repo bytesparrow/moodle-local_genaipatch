@@ -9,6 +9,14 @@ define([], function() {
                         //console.log('[genai_patch] Checkbox "coursecontents" entfernt.');
                     }
                 }
+                const listactivity = document.querySelector('select[name="courseactivities"]');
+                if (listactivity) {
+                    const formRow = listactivity.closest('.form-group, .fitem');
+                    if (formRow) {
+                        formRow.remove();
+                        //console.log('[genai_patch] select "courseactivities" entfernt.');
+                    }
+                }
         }
     };
 });
